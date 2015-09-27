@@ -132,7 +132,7 @@ public class NotesProvider extends ContentProvider{
         }
 
 
-        Log.d("MainActivity", "Get list by:    " + sortOrder);
+        Log.d("MainActivity", "query was :    " + sortOrder);
         return database.query(DBOpenHelper.TABLE_NOTES,                 // FROM (which table)
                 DBOpenHelper.ALL_COLUMNS,               // which columns
                 selection,                              // WHERE (if NULL: get back all the data)

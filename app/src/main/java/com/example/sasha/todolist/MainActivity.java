@@ -3,7 +3,6 @@ package com.example.sasha.todolist;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.LoaderManager;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
@@ -141,7 +140,7 @@ public class MainActivity extends Activity
                 };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(getString(R.string.are_you_sure))
+        builder.setMessage(getString(R.string.delete_all_notes))
                 .setPositiveButton(getString(android.R.string.yes), dialogClickListener)
                 .setNegativeButton(getString(android.R.string.no), dialogClickListener)
                 .show();

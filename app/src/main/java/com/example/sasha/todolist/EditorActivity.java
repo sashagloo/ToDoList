@@ -1,9 +1,11 @@
 package com.example.sasha.todolist;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -27,13 +29,13 @@ import java.util.Locale;
 public class EditorActivity extends Activity implements OnClickListener {
 
     private String action,
-                    oldPriority,
-                    oldDeadline,
-                    oldText,
-                    noteFilter;     // WHERE
+            oldPriority,
+            oldDeadline,
+            oldText,
+            noteFilter;     // WHERE
     private EditText editor,
-                    deadline,
-                    priority;
+            deadline,
+            priority;
 
     //UI References -----------------------
     private DatePickerDialog datePickerDialog;
@@ -91,8 +93,9 @@ public class EditorActivity extends Activity implements OnClickListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_editor, menu);
+        if (action.equals(Intent.ACTION_EDIT)) {
+            getMenuInflater().inflate(R.menu.menu_editor, menu);
+        }
         return true;
     }
 
@@ -106,6 +109,9 @@ public class EditorActivity extends Activity implements OnClickListener {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finishEditing();
+                break;
+            case R.id.action_delete:
+                deleteNote();
                 break;
         }
 
@@ -139,21 +145,36 @@ public class EditorActivity extends Activity implements OnClickListener {
                         }
                     }
                 } else {
+                    Log.d("EditActivity", "updated:    ------>  " + newText + "\n\t\t -> " + newPriority + "\n\t\t -> " + newDeadline);
                     updateNote(newText, newPriority, newDeadline);
                 }
         }
-
-        Log.d("EditActivity", "New note:  " + newText + "\n\t -> " + newPriority + "\n\t -> " + newDeadline);
         finish();
     }
 
     private void deleteNote() {
 
-        getContentResolver().delete(NotesProvider.CONTENT_URI, noteFilter, null);
+        DialogInterface.OnClickListener dialogClickListener =
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int button) {
+                        if (button == DialogInterface.BUTTON_POSITIVE) {
+                            getContentResolver().delete(NotesProvider.CONTENT_URI, noteFilter, null);
 
-        Toast.makeText(this, "Note DELETED!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(EditorActivity.this, "Note DELETED!", Toast.LENGTH_SHORT).show();
 
-        setResult(RESULT_OK);
+                            setResult(RESULT_OK);
+                            finish();
+                        }
+                    }
+                };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.delete_note))
+                .setPositiveButton(getString(android.R.string.yes), dialogClickListener)
+                .setNegativeButton(getString(android.R.string.no), dialogClickListener)
+                .show();
+
     }
 
     private void updateNote(String text, String priority, String deadline) {

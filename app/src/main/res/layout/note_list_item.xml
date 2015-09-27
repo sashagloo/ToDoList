@@ -42,34 +42,4 @@
         android:textColor="@color/list_item_sorted"
         android:textSize="12sp" />
 
-    <!--<Button-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="@string/pick_time"-->
-    <!--android:onClick="showTimePickerDialog" />-->
-
-    <!--<Spinner-->
-    <!--android:id="@+id/spinner1"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:onClick="showDatePickerDialog">-->
-    <!--<com.tallan.android.customviews.DateDisplayPicker-->
-    <!--android:id="@+id/clientEditCreate_BirthDateDayPicker"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--style="@android:style/Widget.Holo.Spinner"-->
-    <!--android:hint="Date"/>-->
-    <!--</Spinner>-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/tvPriority"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignEnd="@+id/tvNote"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_alignParentLeft="true"-->
-    <!--android:layout_marginTop="20dp"-->
-    <!--android:text="@string/priority" />-->
-
-
 </RelativeLayout>
