@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/imageDocIcon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_file_document_box_grey600_48dp" />
+
+    <TextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/imageDocIcon"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="2dp"
+        android:layout_toEndOf="@+id/imageDocIcon"
+        android:layout_toRightOf="@+id/imageDocIcon"
+        android:singleLine="true"
+        android:text="Dummy Text"
+        android:textColor="@color/list_item_text"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvSorting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvNote"
+        android:layout_marginLeft="2dp"
+        android:layout_toEndOf="@+id/imageDocIcon"
+        android:layout_toRightOf="@+id/imageDocIcon"
+        android:singleLine="true"
+        android:text="sorted"
+        android:textColor="@color/list_item_sorted"
+        android:textSize="12sp" />
+
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/pick_time"-->
+    <!--android:onClick="showTimePickerDialog" />-->
+
+    <!--<Spinner-->
+    <!--android:id="@+id/spinner1"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:onClick="showDatePickerDialog">-->
+    <!--<com.tallan.android.customviews.DateDisplayPicker-->
+    <!--android:id="@+id/clientEditCreate_BirthDateDayPicker"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--style="@android:style/Widget.Holo.Spinner"-->
+    <!--android:hint="Date"/>-->
+    <!--</Spinner>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tvPriority"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignEnd="@+id/tvNote"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:text="@string/priority" />-->
+
+
+</RelativeLayout>
