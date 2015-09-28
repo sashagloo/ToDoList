@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 public class MainActivity extends Activity
-                            implements LoaderManager.LoaderCallbacks<Cursor> {
+        implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int EDITOR_REQUEST_CODE = 1001;
 
@@ -85,9 +85,9 @@ public class MainActivity extends Activity
             }
         });
 
-        getLoaderManager().initLoader(  0,          // id
-                                        null,       // arguments
-                                        this);      // implementation of the LoaderCallbacks interface
+        getLoaderManager().initLoader(0,          // id
+                null,       // arguments
+                this);      // implementation of the LoaderCallbacks interface
     }
 
     @Override
@@ -156,6 +156,7 @@ public class MainActivity extends Activity
     }
 
     // -------------------------------------------------
+
     /**
      * Instantiate and return a new Loader for the given ID.
      *

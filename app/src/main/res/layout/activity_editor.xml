@@ -22,12 +22,16 @@
         <EditText
             android:id="@+id/editText"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
-            android:gravity="top" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:gravity="top"
+            android:hint="@string/hint_for_text"
+            android:inputType="textMultiLine|textCapSentences"/>
     </ScrollView>
 
 
@@ -44,11 +48,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight=".5"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
+
             android:layout_marginRight="2dp"
-            android:hint="Set priority"
+            android:hint="@string/set_priority"
             android:gravity="center"
             android:textColorHint="@color/accent"
             android:textColor="@color/white"
@@ -61,9 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight=".5"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
+
             android:layout_marginLeft="2dp"
             android:hint="@string/set_deadline"
             android:gravity="center"

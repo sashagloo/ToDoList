@@ -17,5 +17,12 @@
     <string name="not_created">nothing created</string>
     <string name="delete">Delete</string>
     <string name="note_deleted">Note DELETED!</string>
+    <string name="set_priority">Set priority</string>
+    <string name="cancel">Cancel</string>
+    <string name="set">Set</string>
+    <string name="dummy_text">Dummy Text</string>
+    <string name="sorted_item">sorted</string>
+    <string name="image_doc_icon">image doc icon</string>
+    <string name="hint_for_text">type your text here</string>
 </resources>
 
