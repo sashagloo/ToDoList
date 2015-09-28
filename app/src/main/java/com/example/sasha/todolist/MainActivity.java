@@ -53,6 +53,18 @@ public class MainActivity extends Activity
         // list of resource ID's for Views/Controls, used to display the information
         to = new int[]{R.id.tvNote, R.id.tvSorting};
 
+        display();
+
+        getLoaderManager().initLoader(0,          // id
+                null,       // arguments
+                this);      // implementation of the LoaderCallbacks interface
+    }
+
+    private void display() {
+        if(this.sortOrder == DBOpenHelper.NOTE_DEADLINE){
+            
+            to[1] = DBOpenHelper.NOTE_DEADLINE;
+        }
         cursorAdapter = new SimpleCursorAdapter(this,
                 R.layout.note_list_item, null, this.from, this.to, 0);
 
@@ -84,10 +96,6 @@ public class MainActivity extends Activity
                 startActivityForResult(intent, EDITOR_REQUEST_CODE);
             }
         });
-
-        getLoaderManager().initLoader(0,          // id
-                null,       // arguments
-                this);      // implementation of the LoaderCallbacks interface
     }
 
     @Override
@@ -148,6 +156,7 @@ public class MainActivity extends Activity
     }
 
     private void restartLoader() {
+        display();
         getLoaderManager().restartLoader(
                 0,      // id
                 null,   // arguments
